@@ -1,0 +1,303 @@
+:root {
+    --bg-color: #fffafb;
+    --accent-pink: #f06292;
+    --light-pink: #fce4ec;
+    --deep-berry: #5d1432;
+    --text-muted: #757575;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--deep-berry);
+    line-height: 1.7;
+}
+
+
+
+/* Header & Logo */
+header {
+    background-color: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.logo-large {
+    max-height: 120px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Navigation */
+.soft-nav {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--light-pink);
+    padding: 10px 0;
+}
+
+.soft-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.soft-nav a {
+    text-decoration: none;
+    color: var(--deep-berry);
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 8px 0;
+    position: relative; /* Für die Unterstreichung */
+    transition: color 0.3s ease;
+}
+
+
+
+/* hover effect */
+.soft-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-pink);
+    transition: width 0.3s ease;
+}
+
+.soft-nav a:hover {
+    color: var(--accent-pink);
+}
+
+.soft-nav a:hover::after {
+    width: 100%;
+}
+
+
+
+/* Content Layout */
+#content {
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.hero-text {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--deep-berry);
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+
+
+/* vertical text */
+.info-item {
+    margin-bottom: 50px;
+    border-left: 2px solid var(--light-pink);
+    padding-left: 25px;
+}
+
+.info-item h4 {
+    color: var(--accent-pink);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+
+
+/* Table design */
+.pricing-section h3 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.table-container {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: var(--light-pink);
+    color: var(--deep-berry);
+    padding: 20px;
+    font-weight: 600;
+}
+
+td {
+    padding: 25px;
+    border-bottom: 1px solid var(--light-pink);
+    vertical-align: top;
+}
+
+.feature-label {
+    font-weight: 600;
+    color: var(--accent-pink);
+    width: 30%;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li::before {
+    content: "• ";
+    color: var(--accent-pink);
+}
+
+
+
+/* Container to help with spacing */
+.cta-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+
+
+/* button design */
+.beauty-btn {
+    background-color: var(--deep-berry);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(93, 20, 50, 0.2);
+}
+
+.beauty-btn:hover {
+    background-color: var(--accent-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(240, 98, 146, 0.3);
+}
+
+.beauty-btn:active {
+    transform: translateY(0);
+}
+
+.beauty-btn:focus-visible {
+    outline: 3px solid var(--accent-pink);
+    outline-offset: 4px;
+}
+
+
+
+/* Container for the image and the text that appears on hover */
+.image-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(93, 20, 50, 0.1);
+}
+
+.responsive-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+/* Hover Effect: Zoom the image slightly */
+.image-container:hover .responsive-img {
+    transform: scale(1.1);
+}
+
+/* Overlay text that appears on hover */
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(93, 20, 50, 0.7); /* Deep Berry with transparency */
+    color: white;
+    padding: 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translateY(100%); /* Start hidden below */
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover .overlay-text {
+    transform: translateY(0); /* Slide up on hover */
+}
+
+/* License styling */
+.license-text {
+    margin-top: 12px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.license-text a {
+    color: var(--accent-pink);
+    text-decoration: none;
+}
+
+
+
+/* links */
+td a {
+    color: var(--accent-pink);
+    text-decoration: underline; 
+    font-weight: 600;
+}
+
+td a:hover {
+    color: var(--deep-berry);
+    text-decoration: none;
+}
+
+
+
+/* Footer design*/
+footer {
+    text-align: center;
+    padding: 60px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+
+
